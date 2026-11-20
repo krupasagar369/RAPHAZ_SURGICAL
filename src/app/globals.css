@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-orange: #f47a20;
+  --color-brand-orange-deep: #c94f08;
+  --color-brand-yellow: #ffb900;
+  --color-brand-red: #d93628;
+  --color-brand-red-deep: #c42f22;
+  --color-brand-charcoal: #292d36;
+  --color-brand-light: #fff9f5;
+  --color-brand-muted: #667085;
+
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Plus Jakarta Sans Variable", ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-soft: 0 10px 30px -14px rgb(41 45 54 / 0.18);
+  --shadow-lift: 0 18px 40px -16px rgb(244 122 32 / 0.35);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+  }
+
+  body {
+    background: #fff;
+    color: var(--color-brand-charcoal);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand-orange-deep);
+    outline-offset: 2px;
+  }
+
+  button:not(:disabled),
+  [role="button"] {
+    cursor: pointer;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
